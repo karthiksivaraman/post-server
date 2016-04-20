@@ -13,8 +13,6 @@ class Server(BaseHTTPRequestHandler):
         filename = self.headers.get('X-filename', 'default') + '.gz'
         with open(filename, 'w') as fout:
             fout.write(self.post_data)
-        return
-
 
 def run(server_class=HTTPServer, handler_class=Server, port=8443):
     server_address = ('', port)
